@@ -3,10 +3,12 @@ package com.sree.pokemon
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
-import com.sree.pokemon.dummy.DummyContent
+import androidx.navigation.findNavController
+import com.sree.pokemon.view.PokemonDetailsFragment
+import com.sree.pokemon.view.PokemonListFragment
 
-class MainActivity : AppCompatActivity(),PokemonListFragment.OnListFragmentInteractionListener {
-
+class MainActivity : AppCompatActivity(), PokemonListFragment.OnListFragmentInteractionListener,
+PokemonDetailsFragment.OnDetailsFragmentInteractionListener{
 
     private lateinit var toolbar: Toolbar
 
@@ -23,7 +25,11 @@ class MainActivity : AppCompatActivity(),PokemonListFragment.OnListFragmentInter
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    override fun onListFragmentInteraction(item: DummyContent.DummyItem?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onListFragmentInteraction(position: Int) {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.action_pokemonListFragment_to_pokemonDetailsFragment)
+    }
+
+    override fun onDetailsFragmentInteraction(position: Int) {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.action_pokemonDetailsFragment_self)
     }
 }

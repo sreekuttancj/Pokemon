@@ -1,4 +1,4 @@
-package com.sree.pokemon
+package com.sree.pokemon.helper
 
 import android.os.Handler
 import android.util.Log
@@ -7,35 +7,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import android.widget.TextView
 
 
-import com.sree.pokemon.PokemonListFragment.OnListFragmentInteractionListener
-import com.sree.pokemon.dummy.DummyContent.DummyItem
+import com.sree.pokemon.view.PokemonListFragment.OnListFragmentInteractionListener
+import com.sree.pokemon.R
 /**
  * [RecyclerView.Adapter] that can display a Pokemon and makes a call to the
  * specified [OnListFragmentInteractionListener].
  */
 
 class PokemonRecyclerViewAdapter(
-    private val mValues: List<DummyItem>,
     private val mListener: OnListFragmentInteractionListener?
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val mOnClickListener: View.OnClickListener
     private var VIEW_ITEM = 1
     private var VIEW_FOOTER = 2
     private var showFooter: Boolean = false
     private val myHandler =Handler()
-
-    init {
-        mOnClickListener = View.OnClickListener { v ->
-            val item = v.tag as DummyItem
-            // Notify the active callbacks interface (the activity, if the fragment is attached to
-            // one) that an item has been selected.
-            mListener?.onListFragmentInteraction(item)
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view: View
@@ -58,26 +46,25 @@ class PokemonRecyclerViewAdapter(
             }
         }
         if (holder is MyViewHolder) {
-            val item = mValues[position]
 
-            with(holder.view) {
-                tag = item
-                setOnClickListener(mOnClickListener)
+            holder.itemView.setOnClickListener{
+                mListener?.onListFragmentInteraction(position)
             }
         }
     }
 
-    override fun getItemCount(): Int = mValues.size +1
+    override fun getItemCount(): Int =26
 
     override fun getItemViewType(position: Int): Int {
         return if (position != 0 && position == itemCount-1) VIEW_FOOTER
         else VIEW_ITEM
     }
 
-    inner class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+     class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+
     }
 
-    inner class FooterViewHolder(view: View): RecyclerView.ViewHolder(view){
+     class FooterViewHolder(view: View): RecyclerView.ViewHolder(view){
         val progressBarFooter: ProgressBar = view.findViewById(R.id.progressbar_footer)
     }
     fun showLoading(status: Boolean) {

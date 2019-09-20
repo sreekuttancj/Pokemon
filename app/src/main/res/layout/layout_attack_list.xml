@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:orientation="vertical"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:paddingRight="20dp"
+          android:paddingLeft="20dp"
+          android:paddingTop="4dp"
+          android:paddingBottom="4dp"
+          android:textSize="16sp"
+          android:textColor="@android:color/black"
+          android:text="Grass"
+          android:background="@drawable/textview_attack_backgroud">
+
+</TextView>

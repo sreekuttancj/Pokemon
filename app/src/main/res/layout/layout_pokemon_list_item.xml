@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="horizontal">
+             android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:orientation="horizontal">
+    <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                                       android:layout_height="wrap_content"
+                                       android:id="@+id/cardview_pokemon"
+                                       app:cardUseCompatPadding="true">
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
@@ -20,6 +23,8 @@
             android:layout_gravity="bottom"
             android:layout_height="40dp"
             android:padding="4dp"
-            android:background="#8888"
+            android:background="@color/textview_name_background"
             android:textAppearance="?attr/textAppearanceListItem"/>
+    </androidx.cardview.widget.CardView>
+
 </FrameLayout>
