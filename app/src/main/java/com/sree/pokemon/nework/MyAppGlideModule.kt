@@ -1,4 +1,4 @@
-package com.nasaapod.exploreuniverse.network
+package com.sree.pokemon.nework
 
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule
