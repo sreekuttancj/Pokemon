@@ -1,12 +1,11 @@
 package com.sree.pokemon.database
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
 import com.sree.pokemon.model.Pokemon
 
 @Database(entities = [Pokemon::class],version = 1)
+@TypeConverters(Converters::class)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract fun pokemonDao(): PokemonDao

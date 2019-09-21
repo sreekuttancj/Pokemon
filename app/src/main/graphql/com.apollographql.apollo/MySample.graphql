@@ -16,10 +16,6 @@ query PokemonByNameOrIDQuery($id: String,$name:String){
             id
             number
             name
-            weight {
-                minimum
-                maximum
-            }
             attacks {
                 fast {
                     name
