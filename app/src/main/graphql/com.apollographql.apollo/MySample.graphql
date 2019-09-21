@@ -1,0 +1,40 @@
+query PokemonByNameOrIDQuery($id: String,$name:String){
+    pokemon(id:$id,name:$name){
+        id
+        number
+        name
+        attacks {
+            special {
+                name
+                type
+                damage
+            }
+        }
+        resistant
+        image
+        evolutions {
+            id
+            number
+            name
+            weight {
+                minimum
+                maximum
+            }
+            attacks {
+                fast {
+                    name
+                    type
+                    damage
+                }
+            }
+        }
+    }
+}
+
+query PokemonList($first:Int!){
+    pokemons(first:$first){
+        id
+        number
+        name
+    }
+}

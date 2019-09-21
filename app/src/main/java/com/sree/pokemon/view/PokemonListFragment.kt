@@ -8,9 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
 import com.sree.pokemon.R
 import com.sree.pokemon.helper.DividerItemDecoration
 import com.sree.pokemon.helper.PokemonRecyclerViewAdapter
+import com.sree.pokemon.viewmodel.PokemonSharedViewmodel
 
 /**
  * A fragment representing a list of pokemon.
@@ -21,7 +23,7 @@ class PokemonListFragment : Fragment() {
 
     private var columnCount = 2
     private var listener: OnListFragmentInteractionListener? = null
-
+    private lateinit var pokemonSharedViewmodel:PokemonSharedViewmodel
 
     private var totalItemCount =-1
     private var lastVisibleItem =-1
@@ -29,12 +31,15 @@ class PokemonListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        activity.let {
+            pokemonSharedViewmodel = ViewModelProviders.of(it!!).get(PokemonSharedViewmodel::class.java)
+        }
+        pokemonSharedViewmodel.fetchPokemonFromServer()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_pokemon_list, container, false)
-
+        setUpView(view)
         return view
     }
 
