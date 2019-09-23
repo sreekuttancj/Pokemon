@@ -100,12 +100,10 @@ class PokemonRecyclerViewAdapter(
     }
 
 
-
     override fun getItemCount(): Int{
         return if(pokemonSharedViewmodel.getPokemonList().isEmpty())
             0
         else {
-            Log.i("check_list_size","size: ${pokemonSharedViewmodel.getPokemonList().size}")
             pokemonSharedViewmodel.getPokemonList().size + 1
         }
     }

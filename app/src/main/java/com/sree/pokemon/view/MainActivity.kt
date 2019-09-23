@@ -8,8 +8,6 @@ import androidx.navigation.findNavController
 import com.sree.pokemon.R
 import com.sree.pokemon.viewmodel.PokemonSharedViewmodel
 
-//todo remove leak test
-
 class MainActivity : AppCompatActivity(), PokemonListFragment.OnListFragmentInteractionListener,
 PokemonDetailsFragment.OnDetailsFragmentInteractionListener{
 
