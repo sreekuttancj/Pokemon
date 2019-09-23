@@ -4,11 +4,12 @@ import android.content.Context
 import androidx.room.*
 import com.sree.pokemon.model.Pokemon
 
-@Database(entities = [Pokemon::class],version = 1)
+@Database(entities = [Pokemon::class,EvolutionEntity::class],version = 1)
 @TypeConverters(Converters::class)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract fun pokemonDao(): PokemonDao
+    abstract fun evolutionDao():EvolutionDao
 
     companion object{
         @Volatile

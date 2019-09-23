@@ -2,7 +2,11 @@
     <string name="app_name">Pokemon</string>
     <string name="pokemon">Pokemon</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="evolution">Evolution</string>
+    <string name="retry">Retry</string>
+    <string name="no_network_connection">No Network Connection</string>
+    <string name="no_network">No Network</string>
+    <string name="this_is_the_last_evolution">This is the last evolution</string>
+    <string name="loading">Loading...</string>
+    <string name="warning">Some thing went wrong</string>
 </resources>

@@ -16,8 +16,9 @@ query PokemonByNameOrIDQuery($id: String,$name:String){
             id
             number
             name
+            image
             attacks {
-                fast {
+                special {
                     name
                     type
                     damage

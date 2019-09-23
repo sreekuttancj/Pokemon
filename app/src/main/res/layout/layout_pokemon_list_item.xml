@@ -10,13 +10,10 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:src="@drawable/bambu"
             android:id="@+id/imageView_pokemon"
-            android:contentDescription="@string/pokemon"
-            android:scaleType="centerCrop"/>
+            android:contentDescription="@string/pokemon"/>
     <TextView
-            android:text="001 - Charizard"
-            android:id="@+id/content"
+            android:id="@+id/textView_title"
             android:layout_width="match_parent"
             android:gravity="center"
             android:textColor="@android:color/white"
