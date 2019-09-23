@@ -14,11 +14,9 @@
         <ImageView
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                app:srcCompat="@drawable/bambu"
                 android:id="@+id/imageView_evolution"
                 android:layout_weight="1"/>
         <TextView
-                android:text="001 - Sundhar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView_evolution_name"
